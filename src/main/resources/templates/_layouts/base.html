@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:replace="~{../_fragments/head :: head(~{::title}, ~{::link}, ~{::meta})}">
+    <!-- This title will be replaced by the one from the content page -->
+    <title>SmartHR</title>
+</head>
+
+<body>
+
+    <div id="global-loader">
+        <div class="page-loader"></div>
+    </div>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- Header -->
+        <header th:replace="~{../_fragments/header :: header}"></header>
+        <!-- /Header -->
+
+        <!-- Sidebar -->
+        <div th:replace="~{../_fragments/sidebar :: sidebar}"></div>
+        <!-- /Sidebar -->
+
+        <!-- Page Wrapper -->
+        <div class="page-wrapper">
+            <!-- Page Content -->
+            <div class="content container-fluid" layout:fragment="content">
+                <!-- Content from individual pages will be injected here -->
+            </div>
+            <!-- /Page Content -->
+
+            <!-- Footer -->
+            <footer th:replace="~{../_fragments/footer :: footer}"></footer>
+            <!-- /Footer -->
+        </div>
+        <!-- /Page Wrapper -->
+
+    </div>
+    <!-- /Main Wrapper -->
+
+    <!-- Scripts -->
+    <th:block th:replace="~{../_fragments/scripts :: scripts}"></th:block>
+
+    <!-- Page specific scripts -->
+    <th:block layout:fragment="page-scripts"></th:block>
+
+</body>
+
+</html>

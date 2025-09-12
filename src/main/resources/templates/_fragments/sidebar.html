@@ -1,0 +1,1083 @@
+<div th:fragment="sidebar" class="sidebar" id="sidebar">
+    <!-- Logo -->
+    <div class="sidebar-logo">
+        <a th:href="@{/}" class="logo logo-normal">
+            <img th:src="@{/assets/img/logo.svg}" alt="Logo">
+        </a>
+        <a th:href="@{/}" class="logo-small">
+            <img th:src="@{/assets/img/logo-small.svg}" alt="Logo">
+        </a>
+        <a th:href="@{/}" class="dark-logo">
+            <img th:src="@{/assets/img/logo-white.svg}" alt="Logo">
+        </a>
+    </div>
+    <!-- /Logo -->
+    <div class="modern-profile p-3 pb-0">
+        <div class="text-center rounded bg-light p-3 mb-4 user-profile">
+            <div class="avatar avatar-lg online mb-3">
+                <img th:src="@{/assets/img/profiles/avatar-02.jpg}" alt="Img" class="img-fluid rounded-circle">
+            </div>
+            <h6 class="fs-12 fw-normal mb-1">Adrian Herman</h6>
+            <p class="fs-10">System Admin</p>
+        </div>
+        <div class="sidebar-nav mb-3">
+            <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified bg-transparent" role="tablist">
+                <li class="nav-item"><a class="nav-link active border-0" href="#">Menu</a></li>
+                <li class="nav-item"><a class="nav-link border-0" th:href="@{/chat}">Chats</a></li>
+                <li class="nav-item"><a class="nav-link border-0" th:href="@{/email}">Inbox</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar-header p-3 pb-0 pt-2">
+        <div class="text-center rounded bg-light p-2 mb-4 sidebar-profile d-flex align-items-center">
+            <div class="avatar avatar-md onlin">
+                <img th:src="@{/assets/img/profiles/avatar-02.jpg}" alt="Img" class="img-fluid rounded-circle">
+            </div>
+            <div class="text-start sidebar-profile-info ms-2">
+                <h6 class="fs-12 fw-normal mb-1">Adrian Herman</h6>
+                <p class="fs-10">System Admin</p>
+            </div>
+        </div>
+        <div class="input-group input-group-flat d-inline-flex mb-4">
+					<span class="input-icon-addon">
+						<i class="ti ti-search"></i>
+					</span>
+            <input type="text" class="form-control" placeholder="Search in HRMS">
+            <span class="input-group-text">
+						<kbd>CTRL + / </kbd>
+					</span>
+        </div>
+        <div class="d-flex align-items-center justify-content-between menu-item mb-3">
+            <div class="me-3">
+                <a th:href="@{/calendar}" class="btn btn-menubar">
+                    <i class="ti ti-layout-grid-remove"></i>
+                </a>
+            </div>
+            <div class="me-3">
+                <a th:href="@{/chat}" class="btn btn-menubar position-relative">
+                    <i class="ti ti-brand-hipchat"></i>
+                    <span class="badge bg-info rounded-pill d-flex align-items-center justify-content-center header-badge">5</span>
+                </a>
+            </div>
+            <div class="me-3 notification-item">
+                <a th:href="@{/activity}" class="btn btn-menubar position-relative me-1">
+                    <i class="ti ti-bell"></i>
+                    <span class="notification-status-dot"></span>
+                </a>
+            </div>
+            <div class="me-0">
+                <a th:href="@{/email}" class="btn btn-menubar">
+                    <i class="ti ti-message"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+						<li class="menu-title"><span>MAIN MENU</span></li>
+						<li>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="active subdrop">
+										<i class="ti ti-smart-home"></i>
+										<span>Dashboard</span>
+										<span class="badge badge-danger fs-10 fw-medium text-white p-1">Hot</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/}" class="active">Admin Dashboard</a></li>
+										<li><a th:href="@{/employee-dashboard}">Employee Dashboard</a></li>
+										<li><a th:href="@{/deals-dashboard}">Deals Dashboard</a></li>
+										<li><a th:href="@{/leads-dashboard}">Leads Dashboard</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-layout-grid-add"></i><span>Applications</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/chat}">Chat</a></li>
+										<li class="submenu submenu-two">
+											<a href="call.html">Calls<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a th:href="@{/voice-call}">Voice Call</a></li>
+												<li><a th:href="@{/video-call}">Video Call</a></li>
+												<li><a th:href="@{/outgoing-call}">Outgoing Call</a></li>
+												<li><a th:href="@{/incoming-call}">Incoming Call</a></li>
+												<li><a th:href="@{/call-history}">Call History</a></li>
+											</ul>
+										</li>
+										<li><a th:href="@{/calendar}">Calendar</a></li>
+										<li><a th:href="@{/email}">Email</a></li>
+										<li><a th:href="@{/todo}">To Do</a></li>
+										<li><a th:href="@{/notes}">Notes</a></li>
+										<li><a th:href="@{/social-feed}">Social Feed</a></li>
+										<li><a th:href="@{/file-manager}">File Manager</a></li>
+										<li><a th:href="@{/kanban-view}">Kanban</a></li>
+										<li><a th:href="@{/invoices}">Invoices</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="#">
+										<i class="ti ti-user-star"></i><span>Super Admin</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/dashboard}">Dashboard</a></li>
+										<li><a th:href="@{/companies}">Companies</a></li>
+										<li><a th:href="@{/subscription}">Subscriptions</a></li>
+										<li><a th:href="@{/packages}">Packages</a></li>
+										<li><a th:href="@{/domain}">Domain</a></li>
+										<li><a th:href="@{/purchase-transaction}">Purchase Transaction</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-title"><span>LAYOUT</span></li>
+						<li>
+							<ul>
+								<li>
+									<a th:href="@{/layout-horizontal}">
+										<i class="ti ti-layout-navbar"></i><span>Horizontal</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-detached}">
+										<i class="ti ti-details"></i><span>Detached</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-modern}">
+										<i class="ti ti-layout-board-split"></i><span>Modern</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-two-column}">
+										<i class="ti ti-columns-2"></i><span>Two Column </span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-hovered}">
+										<i class="ti ti-column-insert-left"></i><span>Hovered</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-box}">
+										<i class="ti ti-layout-align-middle"></i><span>Boxed</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-horizontal-single}">
+										<i class="ti ti-layout-navbar-inactive"></i><span>Horizontal Single</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-horizontal-overlay}">
+										<i class="ti ti-layout-collage"></i><span>Horizontal Overlay</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-horizontal-box}">
+										<i class="ti ti-layout-board"></i><span>Horizontal Box</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-horizontal-sidemenu}">
+										<i class="ti ti-table"></i><span>Menu Aside</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-vertical-transparent}">
+										<i class="ti ti-layout"></i><span>Transparent</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-without-header}">
+										<i class="ti ti-layout-sidebar"></i><span>Without Header</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-rtl}">
+										<i class="ti ti-text-direction-rtl"></i><span>RTL</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/layout-dark}">
+										<i class="ti ti-moon"></i><span>Dark</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-title"><span>PROJECTS</span></li>
+						<li>
+							<ul>
+								<li>
+									<a th:href="@{/clients-grid}">
+										<i class="ti ti-users-group"></i><span>Clients</span>
+									</a>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-box"></i><span>Projects</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/projects-grid}">Projects</a></li>
+										<li><a th:href="@{/tasks}">Tasks</a></li>
+										<li><a th:href="@{/task-board}">Task Board</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-title"><span>CRM</span></li>
+						<li>
+							<ul>
+								<li>
+									<a th:href="@{/contacts-grid}">
+										<i class="ti ti-user-shield"></i><span>Contacts</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/companies-grid}">
+										<i class="ti ti-building"></i><span>Companies</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/deals-grid}">
+										<i class="ti ti-heart-handshake"></i><span>Deals</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/leads-grid}">
+										<i class="ti ti-user-check"></i><span>Leads</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/pipeline}">
+										<i class="ti ti-timeline-event-text"></i><span>Pipeline</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/analytics}">
+										<i class="ti ti-graph"></i><span>Analytics</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/activity}">
+										<i class="ti ti-activity"></i><span>Activities</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-title"><span>HRM</span></li>
+						<li>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-users"></i><span>Employees</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/employees}">Employee Lists</a></li>
+										<li><a th:href="@{/employees-grid}">Employee Grid</a></li>
+										<li><a th:href="@{/employee-details}">Employee Details</a></li>
+										<li><a th:href="@{/departments}">Departments</a></li>
+										<li><a th:href="@{/designations}">Designations</a></li>
+										<li><a th:href="@{/policy}">Policies</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-ticket"></i><span>Tickets</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/tickets}">Tickets</a></li>
+										<li><a th:href="@{/ticket-details}">Ticket Details</a></li>
+									</ul>
+								</li>
+								<li>
+									<a th:href="@{/holidays}">
+										<i class="ti ti-calendar-event"></i><span>Holidays</span>
+									</a>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-file-time"></i><span>Attendance</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);">Leaves<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a th:href="@{/leaves}">Leaves (Admin)</a></li>
+												<li><a th:href="@{/leaves-employee}">Leave (Employee)</a></li>
+												<li><a th:href="@{/leave-settings}">Leave Settings</a></li>
+											</ul>
+										</li>
+										<li><a th:href="@{/attendance-admin}">Attendance (Admin)</a></li>
+										<li><a th:href="@{/attendance-employee}">Attendance (Employee)</a></li>
+										<li><a th:href="@{/timesheets}">Timesheets</a></li>
+										<li><a th:href="@{/schedule-timing}">Shift & Schedule</a></li>
+										<li><a th:href="@{/overtime}">Overtime</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-school"></i><span>Performance</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/performance-indicator}">Performance Indicator</a></li>
+										<li><a th:href="@{/performance-review}">Performance Review</a></li>
+										<li><a th:href="@{/performance-appraisal}">Performance Appraisal</a></li>
+										<li><a th:href="@{/goal-tracking}">Goal List</a></li>
+										<li><a th:href="@{/goal-type}">Goal Type</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-edit"></i><span>Training</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/training}">Training List</a></li>
+										<li><a th:href="@{/trainers}">Trainers</a></li>
+										<li><a th:href="@{/training-type}">Training Type</a></li>
+									</ul>
+								</li>
+								<li>
+									<a th:href="@{/promotion}">
+										<i class="ti ti-speakerphone"></i><span>Promotion</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/resignation}">
+										<i class="ti ti-external-link"></i><span>Resignation</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/termination}">
+										<i class="ti ti-circle-x"></i><span>Termination</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-title"><span>RECRUITMENT</span></li>
+						<li>
+							<ul>
+								<li>
+									<a th:href="@{/job-grid}">
+										<i class="ti ti-timeline"></i><span>Jobs</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/candidates-grid}">
+										<i class="ti ti-user-shield"></i><span>Candidates</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/refferals}">
+										<i class="ti ti-ux-circle"></i><span>Referrals</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-title"><span>FINANCE & ACCOUNTS</span></li>
+						<li>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-shopping-cart-dollar"></i><span>Sales</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/estimates}">Estimates</a></li>
+										<li><a th:href="@{/invoices}">Invoices</a></li>
+										<li><a th:href="@{/payments}">Payments</a></li>
+										<li><a th:href="@{/expenses}">Expenses</a></li>
+										<li><a th:href="@{/provident-fund}">Provident Fund</a></li>
+										<li><a th:href="@{/taxes}">Taxes</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-file-dollar"></i><span>Accounting</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/categories}">Categories</a></li>
+										<li><a th:href="@{/budgets}">Budgets</a></li>
+										<li><a th:href="@{/budget-expenses}">Budget Expenses</a></li>
+										<li><a th:href="@{/budget-revenues}">Budget Revenues</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-cash"></i><span>Payroll</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/employee-salary}">Employee Salary</a></li>
+										<li><a th:href="@{/payslip}">Payslip</a></li>
+										<li><a th:href="@{/payroll}">Payroll Items</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-title"><span>ADMINISTRATION</span></li>
+						<li>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-cash"></i><span>Assets</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/assets}">Assets</a></li>
+										<li><a th:href="@{/asset-categories}">Asset Categories</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-headset"></i><span>Help & Supports</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/knowledgebase}">Knowledge Base</a></li>
+										<li><a th:href="@{/activity}">Activities</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-user-star"></i><span>User Management</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/users}">Users</a></li>
+										<li><a th:href="@{/roles-permissions}">Roles & Permissions</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-user-star"></i><span>Reports</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/expenses-report}">Expense Report</a></li>
+										<li><a th:href="@{/invoice-report}">Invoice Report</a></li>
+										<li><a th:href="@{/payment-report}">Payment Report</a></li>
+										<li><a th:href="@{/project-report}">Project Report</a></li>
+										<li><a th:href="@{/task-report}">Task Report</a></li>
+										<li><a th:href="@{/user-report}">User Report</a></li>
+										<li><a th:href="@{/employee-report}">Employee Report</a></li>
+										<li><a th:href="@{/payslip-report}">Payslip Report</a></li>
+										<li><a th:href="@{/attendance-report}">Attendance Report</a></li>
+										<li><a th:href="@{/leave-report}">Leave Report</a></li>
+										<li><a th:href="@{/daily-report}">Daily Report</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-settings"></i><span>Settings</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);">General Settings<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a th:href="@{/profile-settings}">Profile</a></li>
+												<li><a th:href="@{/security-settings}">Security</a></li>
+												<li><a th:href="@{/notification-settings}">Notifications</a></li>
+												<li><a th:href="@{/connected-apps}">Connected Apps</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);">Website Settings<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a th:href="@{/bussiness-settings}">Business Settings</a></li>
+												<li><a th:href="@{/seo-settings}">SEO Settings</a></li>
+												<li><a th:href="@{/localization-settings}">Localization</a></li>
+												<li><a th:href="@{/prefixes}">Prefixes</a></li>
+												<li><a th:href="@{/preferences}">Preferences</a></li>
+												<li><a th:href="@{/performance-appraisal}">Appearance</a></li>
+												<li><a th:href="@{/language}">Language</a></li>
+												<li><a th:href="@{/authentication-settings}">Authentication</a></li>
+												<li><a th:href="@{/ai-settings}">AI Settings</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);">App Settings<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a th:href="@{/salary-settings}">Salary Settings</a></li>
+												<li><a th:href="@{/approval-settings}">Approval Settings</a></li>
+												<li><a th:href="@{/invoice-settings}">Invoice Settings</a></li>
+												<li><a th:href="@{/leave-type}">Leave Type</a></li>
+												<li><a th:href="@{/custom-fields}">Custom Fields</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);">System Settings<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a th:href="@{/email-settings}">Email Settings</a></li>
+												<li><a th:href="@{/email-template}">Email Templates</a></li>
+												<li><a th:href="@{/sms-settings}">SMS Settings</a></li>
+												<li><a th:href="@{/sms-template}">SMS Templates</a></li>
+												<li><a th:href="@{/otp-settings}">OTP</a></li>
+												<li><a th:href="@{/gdpr}">GDPR Cookies</a></li>
+												<li><a th:href="@{/maintenance-mode}">Maintenance Mode</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);">Financial Settings<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a th:href="@{/payment-gateways}">Payment Gateways</a></li>
+												<li><a th:href="@{/tax-rates}">Tax Rate</a></li>
+												<li><a th:href="@{/currencies}">Currencies</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);">Other Settings<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a th:href="@{/custom-css}">Custom CSS</a></li>
+												<li><a th:href="@{/custom-js}">Custom JS</a></li>
+												<li><a th:href="@{/cronjob}">Cronjob</a></li>
+												<li><a th:href="@{/storage-settings}">Storage</a></li>
+												<li><a th:href="@{/ban-ip-address}">Ban IP Address</a></li>
+												<li><a th:href="@{/backup}">Backup</a></li>
+												<li><a th:href="@{/clear-cache}">Clear Cache</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-title"><span>CONTENT</span></li>
+						<li>
+							<ul>
+								<li>
+									<a th:href="@{/pages}">
+										<i class="ti ti-box-multiple"></i><span>Pages</span>
+									</a>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-brand-blogger"></i><span>Blogs</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/blogs}">All Blogs</a></li>
+										<li><a th:href="@{/blog-categories}">Categories</a></li>
+										<li><a th:href="@{/blog-comments}">Comments</a></li>
+										<li><a th:href="@{/blog-tags}">Blog Tags</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-map-pin-check"></i><span>Locations</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/countries}">Countries</a></li>
+										<li><a th:href="@{/states}">States</a></li>
+										<li><a th:href="@{/cities}">Cities</a></li>
+									</ul>
+								</li>
+								<li>
+									<a th:href="@{/testimonials}">
+										<i class="ti ti-message-2"></i><span>Testimonials</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/faq}">
+										<i class="ti ti-question-mark"></i><span>FAQ’S</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-title"><span>PAGES</span></li>
+						<li>
+							<ul>
+								<li>
+									<a th:href="@{/starter}">
+										<i class="ti ti-layout-sidebar"></i><span>Starter</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/profile}">
+										<i class="ti ti-user-circle"></i><span>Profile</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/gallery}">
+										<i class="ti ti-photo"></i><span>Gallery</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/search-result}">
+										<i class="ti ti-list-search"></i><span>Search Results</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/timeline}">
+										<i class="ti ti-timeline"></i><span>Timeline</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/pricing}">
+										<i class="ti ti-file-dollar"></i><span>Pricing</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/coming-soon}">
+										<i class="ti ti-progress-bolt"></i><span>Coming Soon</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/under-maintenance}">
+										<i class="ti ti-alert-octagon"></i><span>Under Maintenance</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/under-construction}">
+										<i class="ti ti-barrier-block"></i><span>Under Construction</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/api-keys}">
+										<i class="ti ti-api"></i><span>API Keys</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/privacy-policy}">
+										<i class="ti ti-file-description"></i><span>Privacy Policy</span>
+									</a>
+								</li>
+								<li>
+									<a th:href="@{/terms-condition}">
+										<i class="ti ti-file-check"></i><span>Terms & Conditions</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-title"><span>AUTHENTICATION</span></li>
+						<li>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-login"></i><span>Login</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/login}">Cover</a></li>
+										<li><a th:href="@{/login-2}">Illustration</a></li>
+										<li><a th:href="@{/login-3}">Basic</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-forms"></i><span>Register</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/register}">Cover</a></li>
+										<li><a th:href="@{/register-2}">Illustration</a></li>
+										<li><a th:href="@{/register-3}">Basic</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-help-triangle"></i><span>Forgot Password</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/forgot-password}">Cover</a></li>
+										<li><a th:href="@{/forgot-password-2}">Illustration</a></li>
+										<li><a th:href="@{/forgot-password-3}">Basic</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-restore"></i><span>Reset Password</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/reset-password}">Cover</a></li>
+										<li><a th:href="@{/reset-password-2}">Illustration</a></li>
+										<li><a th:href="@{/reset-password-3}">Basic</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-mail-exclamation"></i><span>Email Verification</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/email-verification}">Cover</a></li>
+										<li><a th:href="@{/email-verification-2}">Illustration</a></li>
+										<li><a th:href="@{/email-verification-3}">Basic</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-password"></i><span>2 Step Verification</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a th:href="@{/two-step-verification}">Cover</a></li>
+										<li><a th:href="@{/two-step-verification-2}">Illustration</a></li>
+										<li><a th:href="@{/two-step-verification-3}">Basic</a></li>
+									</ul>
+								</li>
+								<li><a th:href="@{/lock-screen}"><i class="ti ti-lock-square"></i><span>Lock Screen</span></a></li>
+								<li><a th:href="@{/error-404}"><i class="ti ti-error-404"></i><span>404 Error</span></a></li>
+								<li><a th:href="@{/error-500}"><i class="ti ti-server"></i><span>500 Error</span></a></li>
+							</ul>
+						</li>
+						<li class="menu-title"><span>UI INTERFACE</span></li>
+						<li>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-hierarchy-2"></i>
+										<span>Base UI</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li>
+											<a th:href="@{/ui-alerts}">Alerts</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-accordion}">Accordion</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-avatar}">Avatar</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-badges}">Badges</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-borders}">Border</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-buttons}">Buttons</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-buttons-group}">Button Group</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-breadcrumb}">Breadcrumb</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-cards}">Card</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-carousel}">Carousel</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-colors}">Colors</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-dropdowns}">Dropdowns</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-grid}">Grid</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-images}">Images</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-lightbox}">Lightbox</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-media}">Media</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-modals}">Modals</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-offcanvas}">Offcanvas</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-pagination}">Pagination</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-popovers}">Popovers</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-progress}">Progress</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-placeholders}">Placeholders</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-spinner}">Spinner</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-sweetalerts}">Sweet Alerts</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-nav-tabs}">Tabs</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-toasts}">Toasts</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-tooltips}">Tooltips</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-typography}">Typography</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-video}">Video</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-sortable}">Sortable</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-swiperjs}">Swiperjs</a>
+										</li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-hierarchy-3"></i>
+										<span>Advanced UI</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li>
+											<a th:href="@{/ui-ribbon}">Ribbon</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-clipboard}">Clipboard</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-drag-drop}">Drag & Drop</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-rangeslider}">Range Slider</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-rating}">Rating</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-text-editor}">Text Editor</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-counter}">Counter</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-scrollbar}">Scrollbar</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-stickynote}">Sticky Note</a>
+										</li>
+										<li>
+											<a th:href="@{/ui-timeline}">Timeline</a>
+										</li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-input-search"></i>
+										<span>Forms</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);">Form Elements <span class="menu-arrow inside-submenu"></span>
+											</a>
+											<ul>
+												<li>
+													<a th:href="@{/form-basic-inputs}">Basic Inputs</a>
+												</li>
+												<li>
+													<a th:href="@{/form-checkbox-radios}">Checkbox & Radios</a>
+												</li>
+												<li>
+													<a th:href="@{/form-input-groups}">Input Groups</a>
+												</li>
+												<li>
+													<a th:href="@{/form-grid-gutters}">Grid & Gutters</a>
+												</li>
+												<li>
+													<a th:href="@{/form-select}">Form Select</a>
+												</li>
+												<li>
+													<a th:href="@{/form-mask}">Input Masks</a>
+												</li>
+												<li>
+													<a th:href="@{/form-fileupload}">File Uploads</a>
+												</li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);">Layouts <span class="menu-arrow inside-submenu"></span>
+											</a>
+											<ul>
+												<li>
+													<a th:href="@{/form-horizontal}">Horizontal Form</a>
+												</li>
+												<li>
+													<a th:href="@{/form-vertical}">Vertical Form</a>
+												</li>
+												<li>
+													<a th:href="@{/form-floating-labels}">Floating Labels</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a th:href="@{/form-validation}">Form Validation</a>
+										</li>
+
+										<li>
+											<a th:href="@{/form-select2}">Select2</a>
+										</li>
+										<li>
+											<a th:href="@{/form-wizard}">Form Wizard</a>
+										</li>
+										<li>
+											<a th:href="@{/form-pickers}">Form Picker</a>
+										</li>
+
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-table-plus"></i>
+										<span>Tables</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li>
+											<a th:href="@{/tables-basic}">Basic Tables </a>
+										</li>
+										<li>
+											<a th:href="@{/data-tables}">Data Table </a>
+										</li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-chart-line"></i>
+										<span>Charts</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li>
+											<a th:href="@{/chart-apex}">Apex Charts</a>
+										</li>
+										<li>
+											<a th:href="@{/chart-c3}">Chart C3</a>
+										</li>
+										<li>
+											<a th:href="@{/chart-js}">Chart Js</a>
+										</li>
+										<li>
+											<a th:href="@{/chart-morris}">Morris Charts</a>
+										</li>
+										<li>
+											<a th:href="@{/chart-flot}">Flot Charts</a>
+										</li>
+										<li>
+											<a th:href="@{/chart-peity}">Peity Charts</a>
+										</li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-icons"></i>
+										<span>Icons</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li>
+											<a th:href="@{/icon-fontawesome}">Fontawesome Icons</a>
+										</li>
+										<li>
+											<a th:href="@{/icon-tabler}">Tabler Icons</a>
+										</li>
+										<li>
+											<a th:href="@{/icon-bootstrap}">Bootstrap Icons</a>
+										</li>
+										<li>
+											<a th:href="@{/icon-remix}">Remix Icons</a>
+										</li>
+										<li>
+											<a th:href="@{/icon-feather}">Feather Icons</a>
+										</li>
+										<li>
+											<a th:href="@{/icon-ionic}">Ionic Icons</a>
+										</li>
+										<li>
+											<a th:href="@{/icon-material}">Material Icons</a>
+										</li>
+										<li>
+											<a th:href="@{/icon-pe7}">Pe7 Icons</a>
+										</li>
+										<li>
+											<a th:href="@{/icon-simpleline}">Simpleline Icons</a>
+										</li>
+										<li>
+											<a th:href="@{/icon-themify}">Themify Icons</a>
+										</li>
+										<li>
+											<a th:href="@{/icon-weather}">Weather Icons</a>
+										</li>
+										<li>
+											<a th:href="@{/icon-typicon}">Typicon Icons</a>
+										</li>
+										<li>
+											<a th:href="@{/icon-flag}">Flag Icons</a>
+										</li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-table-plus"></i>
+										<span>Maps</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li>
+											<a th:href="@{/maps-vector}">Vector</a>
+										</li>
+										<li>
+											<a th:href="@{/maps-leaflet}">Leaflet</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-title"><span>Extras</span></li>
+						<li>
+							<ul>
+								<li>
+									<a href="javascript:void(0);"><i class="ti ti-file-text"></i><span>Documentation</span></a>
+								</li>
+								<li>
+									<a href="javascript:void(0);"><i class="ti ti-exchange"></i><span>Changelog</span><span class="badge bg-pink badge-xs text-white fs-10 ms-s">v4.0.9</span></a>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-menu-2"></i><span>Multi Level</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="javascript:void(0);">Multilevel 1</a></li>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);">Multilevel 2<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="javascript:void(0);">Multilevel 2.1</a></li>
+												<li class="submenu submenu-two submenu-three">
+													<a href="javascript:void(0);">Multilevel 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+													<ul>
+														<li><a href="javascript:void(0);">Multilevel 2.2.1</a></li>
+														<li><a href="javascript:void(0);">Multilevel 2.2.2</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li><a href="javascript:void(0);">Multilevel 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+        </div>
+    </div>
+</div>
