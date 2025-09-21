@@ -1,0 +1,14 @@
+Fragment Extraction Basis
+
+This document explains the logic used for extracting common fragments.
+
+-   **Source for Fragments**: The file `html/template/index.html` was used as the primary source for identifying and extracting common UI components, as it represents the main application layout.
+
+-   **Extracted Fragments**:
+    1.  `_fragments/header.html`: Contains the main site header. Extracted from the `<div class="header">...</div>` block in `index.html`.
+    2.  `_fragments/footer.html`: Contains the site footer. Extracted from the `<footer>...</footer>` block in `index.html`.
+    3.  `_fragments/scripts.html`: Contains the common JavaScript includes. Extracted from the `<script>` tags at the end of the `<body>` in `index.html`.
+
+-   **Application Logic**:
+    -   The converted `index.html` template uses `th:replace` to include these three fragments.
+    -   The converted `login.html` template only includes the `scripts.html` fragment, as it does not share the same header or footer structure. This was determined by analyzing the original `login.html` file.

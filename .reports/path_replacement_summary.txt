@@ -1,0 +1,20 @@
+Path Replacement Summary
+
+This document summarizes the rules applied for converting asset and page link paths to Thymeleaf-compatible formats.
+
+The following regex-based rules were applied in order to all `href` and `src` attributes in the target HTML files and extracted fragments:
+
+1.  `(?si)(href|src)=["'](?:\.\./)+assets/([^"']+)["'] → th:$1="@{/assets/$2}"`
+    *   Purpose: To handle paths that use `../` to navigate to the assets directory.
+
+2.  `(?si)(href|src)=["'](?:\./)?assets/([^"']+)["']   → th:$1="@{/assets/$2}"`
+    *   Purpose: To handle relative paths to the assets directory from the same level.
+
+3.  `(?si)(href|src)=["']/(assets)/([^"']+)["']        → th:$1="@{/$2/$3}"`
+    *   Purpose: To handle absolute paths to the assets directory.
+
+4.  `(?si)(href|src)=["'](?:\.\./|\./|/)?vendor/([^"']+)["'] → th:$1="@{/vendor/$2}"`
+    *   Purpose: To handle paths to a `vendor` directory.
+
+5.  `(href|action)=["']([^"']+\.html)["'] → th:$1="@{/$2}"`
+    *   Purpose: To convert links between HTML pages to Thymeleaf-style context-relative URLs.

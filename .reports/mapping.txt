@@ -1,0 +1,8 @@
+File Conversion Mapping
+
+This report shows the mapping from the original static HTML files to the new Spring Boot Thymeleaf templates.
+
+| Source File                    | Destination File                               | Notes                                  |
+|--------------------------------|------------------------------------------------|----------------------------------------|
+| html/template/index.html       | src/main/resources/templates/index.html        | Converted to Thymeleaf template        |
+| html/template/login.html       | src/main/resources/templates/login.html        | Converted to Thymeleaf template        |

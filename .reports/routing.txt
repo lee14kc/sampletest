@@ -1,0 +1,10 @@
+Routing Table
+
+This report documents the URL routes created in the Spring Boot application.
+
+Routes are defined in `com.example.migration.controller.PageController`.
+
+| HTTP Method | URL Path | Controller Method | Returned Template Name |
+|-------------|----------|-------------------|------------------------|
+| GET         | `/`      | `index()`         | `index`                |
+| GET         | `/login` | `login()`         | `login`                |

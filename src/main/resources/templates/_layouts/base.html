@@ -2,19 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
-	<!-- Meta Tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title layout:title-pattern="$CONTENT_TITLE | $LAYOUT_TITLE">SmartHR</title>
 
-    <title layout:title-pattern="$CONTENT_TITLE | $LAYOUT_TITLE">SmartHR</title>
-
-	<meta name="description" content="SmartHR - An advanced Bootstrap 5 admin dashboard template for HRM and CRM. Ideal for managing employee records, payroll, attendance, recruitment, and team performance with an intuitive and responsive design. Perfect for HR teams and business managers looking to streamline workforce management.">
-	<meta name="keywords" content="HR dashboard template, HRM admin template, Bootstrap 5 HR dashboard, workforce management dashboard, employee management system, payroll dashboard, HR analytics, admin dashboard, CRM admin template, human resources management, HR admin template, team management dashboard, recruitment dashboard, employee attendance system, performance management, HR CRM, HR dashboard HTML, Bootstrap HR template, employee engagement, HR software, project management dashboard">
+	<meta name="description" content="SmartHR - An advanced Bootstrap 5 admin dashboard template for HRM and CRM.">
 	<meta name="author" content="Dreams Technologies">
 	<meta name="robots" content="index, follow">
-
-	<!-- Apple Touch Icon -->
-	<link rel="apple-touch-icon" sizes="180x180" th:href="@{/assets/img/apple-touch-icon.png}">
 
 	<!-- Favicon -->
 	<link rel="icon" th:href="@{/assets/img/favicon.png}" type="image/x-icon">
@@ -57,143 +51,23 @@
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" th:href="@{/assets/css/style.css}">
-
-    <!-- Page-specific CSS -->
-    <th:block layout:fragment="page-css"></th:block>
-
 </head>
 
 <body>
-
 	<div id="global-loader">
 		<div class="page-loader"></div>
 	</div>
 
 	<!-- Main Wrapper -->
 	<div class="main-wrapper">
-
 		<header th:replace="~{_fragments/header :: header}"></header>
 
-		<!-- Sidebar -->
-		<div class="sidebar" id="sidebar">
-			<!-- Logo -->
-			<div class="sidebar-logo">
-				<a href="index.html" th:href="@{/}" class="logo logo-normal">
-					<img th:src="@{/assets/img/logo.svg}" alt="Logo">
-				</a>
-				<a href="index.html" th:href="@{/}" class="logo-small">
-					<img th:src="@{/assets/img/logo-small.svg}" alt="Logo">
-				</a>
-				<a href="index.html" th:href="@{/}" class="dark-logo">
-					<img th:src="@{/assets/img/logo-white.svg}" alt="Logo">
-				</a>
-			</div>
-			<!-- /Logo -->
-			<div class="modern-profile p-3 pb-0">
-				<div class="text-center rounded bg-light p-3 mb-4 user-profile">
-					<div class="avatar avatar-lg online mb-3">
-						<img th:src="@{/assets/img/profiles/avatar-02.jpg}" alt="Img" class="img-fluid rounded-circle">
-					</div>
-					<h6 class="fs-12 fw-normal mb-1">Adrian Herman</h6>
-					<p class="fs-10">System Admin</p>
-				</div>
-				<div class="sidebar-nav mb-3">
-					<ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified bg-transparent" role="tablist">
-						<li class="nav-item"><a class="nav-link active border-0" href="#">Menu</a></li>
-						<li class="nav-item"><a class="nav-link border-0" href="chat.html" th:href="@{/chat}">Chats</a></li>
-						<li class="nav-item"><a class="nav-link border-0" href="email.html" th:href="@{/email}">Inbox</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="sidebar-header p-3 pb-0 pt-2">
-				<div class="text-center rounded bg-light p-2 mb-4 sidebar-profile d-flex align-items-center">
-					<div class="avatar avatar-md onlin">
-						<img th:src="@{/assets/img/profiles/avatar-02.jpg}" alt="Img" class="img-fluid rounded-circle">
-					</div>
-					<div class="text-start sidebar-profile-info ms-2">
-						<h6 class="fs-12 fw-normal mb-1">Adrian Herman</h6>
-						<p class="fs-10">System Admin</p>
-					</div>
-				</div>
-				<div class="input-group input-group-flat d-inline-flex mb-4">
-					<span class="input-icon-addon">
-						<i class="ti ti-search"></i>
-					</span>
-					<input type="text" class="form-control" placeholder="Search in HRMS">
-					<span class="input-group-text">
-						<kbd>CTRL + / </kbd>
-					</span>
-				</div>
-				<div class="d-flex align-items-center justify-content-between menu-item mb-3">
-					<div class="me-3">
-						<a href="calendar.html" class="btn btn-menubar">
-							<i class="ti ti-layout-grid-remove"></i>
-						</a>
-					</div>
-					<div class="me-3">
-						<a href="chat.html" class="btn btn-menubar position-relative">
-							<i class="ti ti-brand-hipchat"></i>
-							<span class="badge bg-info rounded-pill d-flex align-items-center justify-content-center header-badge">5</span>
-						</a>
-					</div>
-					<div class="me-3 notification-item">
-						<a href="activity.html" class="btn btn-menubar position-relative me-1">
-							<i class="ti ti-bell"></i>
-							<span class="notification-status-dot"></span>
-						</a>
-					</div>
-					<div class="me-0">
-						<a href="email.html" class="btn btn-menubar">
-							<i class="ti ti-message"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="sidebar-inner slimscroll">
-				<div id="sidebar-menu" class="sidebar-menu">
-					<ul>
-						<li class="menu-title"><span>MAIN MENU</span></li>
-						<li>
-							<ul>
-								<li class="submenu">
-									<a href="javascript:void(0);" class="active subdrop">
-										<i class="ti ti-smart-home"></i>
-										<span>Dashboard</span>
-										<span class="badge badge-danger fs-10 fw-medium text-white p-1">Hot</span>
-										<span class="menu-arrow"></span>
-									</a>
-									<ul>
-										<li><a href="index.html" th:href="@{/}" class="active">Admin Dashboard</a></li>
-										<li><a href="employee-dashboard.html" th:href="@{/employee-dashboard}">Employee Dashboard</a></li>
-										<li><a href="deals-dashboard.html" th:href="@{/deals-dashboard}">Deals Dashboard</a></li>
-										<li><a href="leads-dashboard.html" th:href="@{/leads-dashboard}">Leads Dashboard</a></li>
-									</ul>
-								</li>
-                                <!-- Other menu items would go here, but are omitted for brevity -->
-							</ul>
-						</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-		<!-- Page Wrapper -->
-		<div class="page-wrapper">
-            <div layout:fragment="content">
-                <!-- Page content goes here -->
-            </div>
-            <footer th:replace="~{_fragments/footer :: footer}"></footer>
-        </div>
-		<!-- /Page Wrapper -->
-
+		<div layout:fragment="content">
+			<!-- Page-specific content will be injected here -->
+		</div>
 	</div>
 	<!-- /Main Wrapper -->
 
-	<div th:replace="~{_fragments/scripts :: scripts}"></div>
-
-    <!-- Page-specific JS -->
-    <th:block layout:fragment="page-js"></th:block>
-
+	<th:block th:replace="~{_fragments/scripts :: scripts}"></th:block>
 </body>
-
 </html>

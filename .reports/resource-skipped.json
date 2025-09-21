@@ -1,0 +1,6 @@
+{
+  "skipped_paths": [
+    "html/template/assets/img",
+    "html/template/assets/plugins"
+  ]
+}

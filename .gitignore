@@ -1,0 +1,7 @@
+# Ignore build output
+build/
+.gradle/
+
+# Ignore IDE files
+.idea/
+*.iml
